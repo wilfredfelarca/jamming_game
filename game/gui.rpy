@@ -60,10 +60,10 @@ define gui.interface_text_color = '#ffffff'
 define gui.text_font = "SwankyandMooMoo-Regular.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "SwankyandMooMoo-Regular.ttf"
+define gui.name_text_font = "AveriaSerif-Regular.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "SwankyandMooMoo-Regular.ttf"
+define gui.interface_text_font = "AveriaSerif-Regular.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 38
@@ -87,7 +87,7 @@ define gui.title_text_size = 75
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "gui/main_menu.png"
+define gui.main_menu_background = "gui/Shizuku_22_trained_art.png"
 define gui.game_menu_background = "gui/game_menu.png"
 
 
@@ -211,7 +211,7 @@ define gui.choice_button_borders = Borders(150, 8, 150, 8)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = '#888888'
+define gui.choice_button_text_idle_color = '#aaaaaa'
 define gui.choice_button_text_hover_color = "#ffffff"
 define gui.choice_button_text_insensitive_color = '#8888887f'
 
