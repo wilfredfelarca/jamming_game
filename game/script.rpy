@@ -112,8 +112,80 @@ label start:
 
             "???" "Yes?"
 
-        label day1:
-            "It's a new day"
+            "--!?"
+            e "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH"
+
+            "A foggy figure appears right in front of me, her form not quite whole."
+
+            "???" "That’s quite a… unique weapon there, dearie, do you need something? Perhaps a better weapon, ehe~"
+
+            e "Need something-!? What the- Who are you?!"
+
+            "???" "Oh, that's quite unlady-like of me."
+
+            s "I am Schariac Claire Juliette from house DuFontaine"
+
+            e "..."
+
+            s "..."
+
+            s "Um… you can call me Schariac."
+
+            s "And hm… this isn’t my father's manor."
+
+            "I really think I’m losing it, first, I’m seeing and hearing things that aren’t really there— now I’m listening to this… THING talks about my apartment being some sort of Manor!"
+
+            e "I’m sorry, what?"
+
+            s "My sincerest apologies there, last I remember I was on my way to-"
+
+            s "Oh, good heavens! I should not bear to you my life story— that is unlady-like of me."
+
+            "Manor…? Ladylike-ness? Either I’m going insane or this is a ghost… so I’m going insane."
+
+            e "Hold on there, so are you implying you’re a ghost?"
+
+            "The ghostly blur seems to twist and turn— suddenly turning back to me."
+
+            s "A ghoul, ghostly apparition or a geist— either way, you seem to be correct Miss…"
+
+            e "Elysia."
+
+            s "Ms. Elysia! Such a beautiful name."
+
+            s "It seems the sun is about to rise— I do feel a tad tired… yawn"
+
+            e "Wait-!"
+
+            menu:
+                "Can I see your true form?":
+                    s "Maybe not now… I’ve only just known you, Ms. Elysia. Maybe when we’re closer, I’ll show you my real form…"
+
+                    s "Don’t worry, call me a romantic but something tells me this isn’t our last meeting, you’ll have plenty of chances to get to know me~"
+
+                    e "How can you be so sure?"
+
+                    s "Well, I may be a ghost but I can’t be everywhere" 
+
+                    s "Maybe when the room feels eerie- Boo! I’ll be there ehe"
+
+                    s "I am a busy woman, so please don’t take too long finding me— if you do, the sun may rise and I’ll be left a distant ‘what if?’ of the night~"
+
+                    jump day1
+
+                "Nevermind… rest well.":
+                    s "You truly are sweet… rest well too there, Ms. Elysia"
+
+                    jump day1
+
+
+
+label day1:
+    if searchNum == 2:
+        "It's a new day"
+
+    else: 
+        s "“Don’t worry, call me a romantic but something tells me this isn’t our last meeting, you’ll have plenty of chances to get to know me~”"
 
 
 
