@@ -180,12 +180,12 @@ label start:
 
 
 
-        label day1:
-            if searchNum == 2:
-                "It's a new day"
-                
-            else: 
-                s "“Don’t worry, call me a romantic but something tells me this isn’t our last meeting, you’ll have plenty of chances to get to know me~”"
+label day1:
+    if searchNum == 2:
+        "It's a new day"
+
+    else: 
+        s "“Don’t worry, call me a romantic but something tells me this isn’t our last meeting, you’ll have plenty of chances to get to know me~”"
 
 
 
