@@ -165,7 +165,7 @@ label start:
                 "Can I see your true form?":
                     s "Maybe not now… I’ve only just known you, Ms. Elysia. Maybe when we’re closer, I’ll show you my real form…"
 
-                    s "Don’t worry, call me a romantic but something tells me this isn’t our last meeting, you’ll have plenty of chances to get to know me~"
+                    s "Don’t worry, call me a romantic but something tells me this won’t be our last meeting, you’ll have plenty of chances to get to know me~"
 
                     e "How can you be so sure?"
 
@@ -186,9 +186,11 @@ label start:
 
 label day1:
 
-    s "“Don’t worry, call me a romantic but something tells me this isn’t our last meeting, you’ll have plenty of chances to get to know me~”"
-
     scene bg black with dissolve
+
+    "..."
+
+    "{i}“Don’t worry, call me a romantic but something tells me this won’t be our last meeting, you’ll have plenty of chances to get to know me~”{/i}"
 
     "Schariac’s words kept me up as I tossed and turned all over my bed.
     What does she mean by that? Does she plan to linger in my apartment?"
