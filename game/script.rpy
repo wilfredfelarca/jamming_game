@@ -36,7 +36,9 @@ label start:
 
     "I didn’t believe it at first when I found out, but it all changed because of this one particular night."
 
-    "Having had enough of pizza and Scooby Doo, I decided to call it a night. Before heading to bed, I left my dirty dishes on the sink. I can just deal with them tomorrow. I hear my bed calling, and I’m more than ready to sleep."
+    "Having had enough of pizza and Scooby Doo, I decided to call it a night. Before heading to bed, I leave my dirty dishes on the sink."
+
+    "I can just deal with them tomorrow. I hear my bed calling, and I’m more than ready to sleep."
 
     "..."
 
@@ -113,7 +115,9 @@ label start:
             "???" "Yes?"
 
             "--!?"
-            e "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH"
+
+            ## vpunch shakes the screen vertically, hpunch does similarly horizontally
+            e "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH" with vpunch 
 
             "A foggy figure appears right in front of me, her form not quite whole."
 
