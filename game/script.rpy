@@ -187,6 +187,66 @@ label day1:
     else: 
         s "“Don’t worry, call me a romantic but something tells me this isn’t our last meeting, you’ll have plenty of chances to get to know me~”"
 
+        "Schariac’s words kept me up as I tossed and turned all over my bed. What does she mean by that? Does she plan to linger in my apartment?"
+
+        "I look outside the window and the blood moon greets me back, the giant orb irritatingly red, as if mocking my current predicament."
+
+        "4 days huh? Maybe that has something to do with her."
+
+        "Before I even get the chance to lose myself in my thoughts, I hear sounds coming from another room."
+
+        "She must be around."
+
+        $ randRoom = renpy.random.randint(1, 3)
+        $ searchNum = 0
+
+        label searchRoom1:
+            if searchNum == 2:
+                jump day2
+            menu:
+                "Search the kitchen":
+                    if randRoom == 1:
+                        e "I see Schariac standing by my bookshelf, her curious eyes going over the numerous books messily strewn about gathering dust."
+                        jump encounter1
+                    else:
+                        "Nothing here seems out of place, everything seems fine..."
+                        e "It is a bit chilly here."
+                        $ searchNum += 1
+                        jump searchRoom1
+
+                "Search the living room":
+                    if randRoom == 2:
+                        e "I see Schariac standing by my bookshelf, her curious eyes going over the numerous books messily strewn about gathering dust."
+                        jump encounter1
+                    else:
+                        "Nothing here seems out of place, everything seems fine..."
+                        e "It is a bit chilly here."
+                        $ searchNum += 1
+                        jump searchRoom1
+                        
+                "Search the storage room":
+                    if randRoom == 3:
+                        e "I see Schariac standing by my bookshelf, her curious eyes going over the numerous books messily strewn about gathering dust."
+                        jump encounter1
+                    else:
+                        "Nothing here seems out of place, everything seems fine..."
+                        e "It is a bit chilly here."
+                        $ searchNum += 1
+                        jump searchRoom1
+        
+
+        label encounter1:
+            s "You know, Ms. Elysia, I find it amusing how alike you are to this protagonist from a book I loved dearly."
+
+            "I felt myself choke on my spit, my ears heating up at Schariac’s random comment."
+
+            e "M-Me? Um… I doubt I’m like any of the protagonists from books you’ve read-"
+
+
+
+    label day2:
+        "its a new day"
+
 
 
     # This ends the game.
