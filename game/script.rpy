@@ -20,15 +20,15 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
-
     # These display lines of dialogue.
 
     "Noises echo through my apartment walls as I sink deeper into my couch— reruns of Scooby Doo playing in the background as my mind drifts to anywhere but this room."
 
     e "What a day…"
 
-    "While I munch away mindlessly, my ears perk up at the sound of my show being interrupted by a sudden news flash. Apparently, a blood moon was going to happen again after 3 years, and this time it will last for 4 days."
+    "While I munch away mindlessly, my ears perk up at the sound of my show being interrupted by a sudden news flash."
+
+    "Apparently, a blood moon was about to occur, three years after the last time. Supposedly, it'll last for four days."
 
     "Personally, I don't really care for it. I mean, the moon turns red — I doubt it does anything other than make evenings a tad bit spookier."
 
@@ -67,10 +67,8 @@ label start:
     "Now to look around"
 
     $ randRoom = renpy.random.randint(1, 3)
-    $ searchNum = 0
+    ## Since this is the tutorial, we'll let the player have infinite tries to search.
     label searchRoom:
-        if searchNum == 2:
-            jump day1
         menu:
             "Check Cupboard":
                 if randRoom == 1:
@@ -78,7 +76,6 @@ label start:
                 else:
                     "Nothing here seems out of place, everything seems fine..."
                     e "It is a bit chilly here."
-                    $ searchNum += 1
                     jump searchRoom
 
             "Check Fridge":
@@ -86,7 +83,6 @@ label start:
                     jump encounter
                 else:
                     "Nothing here seems out of place, everything seems fine..."
-                    $ searchNum += 1
                     jump searchRoom
 
             "Check Sink":
@@ -95,7 +91,6 @@ label start:
                 else:
                     "Huh—?"
                     e "I never cleaned or organized these dishes… have I?"
-                    $ searchNum += 1
                     jump searchRoom
 
         label encounter:
@@ -109,6 +104,11 @@ label start:
             "Am I going crazy? I heard something move- no, I SAW it move."
 
             e "Come out, come out wherever you are~"
+
+            ## Makes character appear with fade-in (dissolve) and scales them properly
+            show ghost sus with dissolve: 
+                xalign 0.5
+                zoom 0.5
 
             "???" "Yes?"
 
@@ -174,65 +174,69 @@ label start:
                     jump day1
 
                 "Nevermind… rest well.":
-                    s "You truly are sweet… rest well too there, Ms. Elysia"
+                    s "You truly are sweet… rest well too there, Ms. Elysia."
 
                     jump day1
 
 
 
 label day1:
-    if searchNum == 2:
-        "It's a new day"
 
-    else: 
-        s "“Don’t worry, call me a romantic but something tells me this isn’t our last meeting, you’ll have plenty of chances to get to know me~”"
+    s "“Don’t worry, call me a romantic but something tells me this isn’t our last meeting, you’ll have plenty of chances to get to know me~”"
 
-        "Schariac’s words kept me up as I tossed and turned all over my bed. What does she mean by that? Does she plan to linger in my apartment?"
+    scene bg black with dissolve
 
-        "I look outside the window and the blood moon greets me back, the giant orb irritatingly red, as if mocking my current predicament."
+    "Schariac’s words kept me up as I tossed and turned all over my bed.
+    What does she mean by that? Does she plan to linger in my apartment?"
 
-        "4 days huh? Maybe that has something to do with her."
+    scene bg bedroom_night with dissolve
 
-        "Before I even get the chance to lose myself in my thoughts, I hear sounds coming from another room."
+    "I look outside the window and the blood moon greets me back, the giant orb irritatingly red, as if mocking my current predicament."
 
-        "She must be around."
+    "Four days, huh? Maybe that has something to do with her."
 
-        $ randRoom = renpy.random.randint(1, 3)
-        $ searchNum = 0
+    "Before I even get the chance to lose myself in my thoughts, I hear sounds coming from another room."
 
-        label searchRoom1:
-            if searchNum == 2:
-                jump day2
-            menu:
-                "Search the kitchen":
-                    if randRoom == 1:
-                        e "I see Schariac standing by my bookshelf, her curious eyes going over the numerous books messily strewn about gathering dust."
-                        jump encounter1
-                    else:
-                        "Nothing here seems out of place, everything seems fine..."
-                        e "It is a bit chilly here."
-                        $ searchNum += 1
-                        jump searchRoom1
+    "She must be around."
 
-                "Search the living room":
-                    if randRoom == 2:
-                        e "I see Schariac standing by my bookshelf, her curious eyes going over the numerous books messily strewn about gathering dust."
-                        jump encounter1
-                    else:
-                        "Nothing here seems out of place, everything seems fine..."
-                        e "It is a bit chilly here."
-                        $ searchNum += 1
-                        jump searchRoom1
-                        
-                "Search the storage room":
-                    if randRoom == 3:
-                        e "I see Schariac standing by my bookshelf, her curious eyes going over the numerous books messily strewn about gathering dust."
-                        jump encounter1
-                    else:
-                        "Nothing here seems out of place, everything seems fine..."
-                        e "It is a bit chilly here."
-                        $ searchNum += 1
-                        jump searchRoom1
+    $ randRoom = renpy.random.randint(1, 3)
+    $ searchNum = 0
+
+    label searchRoom1:
+        if searchNum >= 2:
+            $ searchNum = 0
+            jump day2
+        menu:
+            "Search the kitchen":
+                if randRoom == 1:
+                    e "I see Schariac standing by my bookshelf, her curious eyes going over the numerous books messily strewn about gathering dust."
+                    jump encounter1
+                else:
+                    "Nothing here seems out of place, everything seems fine..."
+                    e "It is a bit chilly here."
+                    $ searchNum += 1
+                    jump searchRoom1
+
+            "Search the living room":
+                scene bg house_night with dissolve
+                if randRoom == 2:
+                    e "I see Schariac standing by my bookshelf, her curious eyes going over the numerous books messily strewn about gathering dust."
+                    jump encounter1
+                else:
+                    "Nothing here seems out of place, everything seems fine..."
+                    e "It is a bit chilly here."
+                    $ searchNum += 1
+                    jump searchRoom1
+                    
+            "Search the storage room":
+                if randRoom == 3:
+                    e "I see Schariac standing by my bookshelf, her curious eyes going over the numerous books messily strewn about gathering dust."
+                    jump encounter1
+                else:
+                    "Nothing here seems out of place, everything seems fine..."
+                    e "It is a bit chilly here."
+                    $ searchNum += 1
+                    jump searchRoom1
         
 
         label encounter1:
