@@ -89,6 +89,7 @@ define gui.title_text_size = 75
 ## The images used for the main and game menus.
 define gui.main_menu_background = "gui/Shizuku_22_trained_art.png"
 define gui.game_menu_background = "gui/game_menu.png"
+define gui.title_text_color = '#f97c9d'
 
 
 ## Dialogue ####################################################################

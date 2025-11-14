@@ -48,5 +48,4 @@ label start:
         pass
 
     # This ends the game.
-
     return
