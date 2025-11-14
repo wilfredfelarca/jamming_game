@@ -3,9 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Elysia")
-define s = Character("Schariac")
-
+define e = Character(_("Elysia"), color="#ddaacc")
+define s = Character(_("Schariac"), color="#c9e4e4")
 
 # The game starts here.
 
@@ -15,7 +14,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    scene bg house_night
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -119,5 +118,4 @@ label start:
 
 
     # This ends the game.
-
     return
