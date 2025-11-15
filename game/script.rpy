@@ -658,6 +658,7 @@ label day1:
             e "She seems quite active tonight, might as well say ‘hello’"
 
             label searchRoom3:
+                $ inLivingRoom = False
                 if searchNum >= 2:
                     $ searchNum = 0
                     "Huh... No matter how hard I looked, she's not here."
@@ -678,6 +679,7 @@ label day1:
                         "Search the living room":
                             scene bg house_night with dissolve
                             if randRoom == 2:
+                                $ inLivingRoom = True
                                 jump encounter3
                             else:
                                 "Huh... I swore I heard noises coming from here."
@@ -722,9 +724,181 @@ label day1:
 
                     "Her eyes hang a sense of sorrow- fear even, what comes to her existence after this blood moon sets is beyond both of our comprehension. The blurry figure turns around, her glowing eyes meeting with mine, locking our gazes exclusively for each other."
 
+                    menu:
+                        "apologize":
+                            e "I'm sorry, I can't make a difference."
+
+                            s "Why are you apologizing for? You weren’t the reason why the blood moon is rising~"
+
+                        "Remain quiet":
+                            e "..."
+
+                    s "Whether it’s been four nights or four years, my opinion stays the same. The time I’ve had with you, is like a fairy tale coming true. Call me shallow but, you’ve done what my suitors couldn’t in my whole thirty-two years of life."
+
+                    s "So quit with the self-deprecating words, you DID make a difference Ms. Elysia. Even with the snarky attitude and questionable reading habits~."
+
+                    "Constance's eyes hang low, her blurry figure drifting to the window, watching the city lights flood her eyes as she speaks."
+
+                    s "You asked me about my past… correct?"
+
+                    menu:
+                        "Agree":
+                            e "I did, but don’t think you’re obligated to tell me! I’d rather not force you t-"
+
+                            "Constance lets out a low “shhh”- my voice falling silent as it happens."
+
+                        "Remain quiet":
+                            e "..."
 
 
-            
+                    s "You told me your story, it’s only fair if I told mine."
+
+                    s "For as long as I can remember, I had always heard from my father that my hand is to be wedded off to some neighbouring noble. I learned how to present my vows before I could write my own name…"
+
+                    s "My life was surrounded in glamor, servants at my beck and call, a line of suitors ready to take my hand at a moment's notice yet- something felt too perfect, too well woven for my life."
+
+                    s "I always assumed love was something meaningless, reserved for princesses stuck at towers or lost maidens seeking for a knight to save them. Love is meant for fantasies, you can’t sustain your life purely on love"
+
+                    s "But as per duty for my family, after some time of convincing and well… researching, I had found a suitable partner to marry. He wasn’t the kindness nor the most chivalrous but he did leave my family in a better position in the country than without his name"
+
+                    s "I didn’t love him, I felt like something was wrong with me. Every man they threw my way never seemed to reach what I truly wanted, which was strange."
+
+                    e "Is it because they aren’t the knightly protectors from your books?"
+
+                    s "--!"
+
+                    s "You have a good eye there Ms. Elysia, but no."
+
+                    s "Many of them were knights or some form of travellers, but even with those attributes, they’ve never truly piqued my interest. I must be strange"
+
+                    s "But I’m getting side-tracked. We didn’t talk much, even after we accepted the engagement- it’s like we returned to being complete strangers… waiting till the day we stand at the altar."
+
+                    "As she spoke, her voice trailed flat. The moment she attempts to speak again, her voice comes shaky, fear engulfs every crevice they can hide in her words."
+
+                    e "Const-"
+
+                    s "I’m fine- I waited and waited… and waited till our wedding had arrived. But it didn’t"
+
+                    s "I remember that night like it was just yesterday. I was getting ready with my handmaidens for my wedding in this very room. I was aimlessly reading my favorite book ‘Skyward Bound: Adrift in Time’ when suddenly…"
+
+                    "The air seemed to have dropped temperature, my already freezing body now slowly reduced to a numbing mess."
+
+                    s "Before I knew it, I heard trumpets, soldiers footsteps and screaming… my fiance had come to take my land and my head."
+
+                    e "No wonder you stalk these halls, I always had assumed your life would be tragic but… my goodness"
+
+                    "Elysia feels a gust of wind run to her back, causing the young woman to shut her eyes tight."
+
+                    s "Turn around."
+
+                    "Upon the ghost’s command, I turn around and my eyes widen- the being in front of me isn’t some blurry apparition no- it was something else… someone else."
+
+                    "The woman had light seafoam blue hair, some cascading to the side of her face, slightly covering her left eye. She wore a white gown and veil, as if she was waiting for someone to greet her down the aisle… and her eyes bore aeons of grief, sorrow and regret."
+
+                    s "Ta-da… how do I look?"
+
+                    menu:
+                        "stutter":
+                            e "Um..Y-you l-"
+
+                        "Fully compliment":
+                            e "You look amazing there- I just didn’t think you’d look well.. Um"
+
+                    s "No need to get shy, it’s just a simple wedding dress, nothing more."
+
+                    "I gaze upon her figure once more, taking in every minute detail I can before the morning takes her away from me. My gaze falls to a book tucked tightly at her belt."
+
+                    e "I assume that was that book you passed with?"
+
+                    s "Right on the money~ I always dreamed that my wedding would have a dance like the knight and the princess in this book… such a shame that he took it away from me."
+
+                    "My mind is filled with a sense of… anger? Frustration? Why am I getting so pressed over some dead guy. I mean yeah, he was a devil for killing Constance at her wedding day but what the heck can I do? That deed has been done and dusted. I can’t alter the past."
+
+                    "Yet… just before this night ends, I want to change one thing. Just before my mind could form the thought, my mouth acted upon itself."
+
+                    e "Lady Constance, May I have a dance?"
+
+                    "She stood in front of me… frozen. Did I mess up? She probably found me stupid for even trying to dance with a ghost-"
+
+                    s "I would love to… Ms. Elysia~"
+
+                    "She said yes?"
+
+                    if inLivingRoom == False:
+                        s "This place isn’t the best area for a dance, shall we head to the living room? It’s far more spacious."
+                        scene bg house_night with dissolve
+
+                    e "R-right!"
+
+                    "As the living room holds the light of the moon, I feel her light touch upon my hand. It’s cold, numbing even yet I did not wish to pull away."
+
+                    s "Just follow my steps ok?"
+
+                    e "Y-yes Ma’am!"
+
+                    "Upon the first step of the dance, Constance started humming. As if the medley had taken over me, I had started to swing to the sound of her voice. Her eyes were closed, focused on maintaining a consistent tune- She was quite taller than me, even I was to estimate her height without those old heels, she towers over my figure."
+
+                    "That smile, that voice, this woman in front of me- they all deserve better. Whatever I’m feeling, whether it’s love or something else, I don’t know and I don’t care. I only wish you’d have lived the life you wanted. One of leisure, one where the concept of “Love” isn’t a form of fantasy."
+
+                    "As we glided across the living room, the corner of my eye had caught the glimpse of dawn approaching. Oh sweet sunrise; don’t shine your rays upon this moment, not when she’s in a moment of bliss."
+
+                    "As I tried to hold onto her figure, Constance started to feel lighter and lighter. My steps had grown faulty, missing beats and tripping over myself."
+
+                    s "Just keep your eyes on me, don’t let the dawn tear you away from this moment."
+
+                    "Her voice echoed through my mind as I keep up with her pace, the weight of her touch feeling fainter till-"
+
+                    s "You’re quite a good dancer- I wish… I knew you sooner."
+
+                    "I couldn’t muster a word."
+
+                    "Before I could even try to tell her something… anything." 
+
+                    "She was gone."
+
+                    "The sun had risen… It's time to go back to work- yet why do I feel so empty?"
+
+        if affection < 2:
+            "I wake up to the sound of clanking again."
+
+            "Honestly? I can’t be bothered, all she’s done was keep me awake. If she has some unfinished business then it’s her problem, not mine."
+
+            "I’m going back to bed."
+
+            "zzzzz"
+
+        else:
+            "It’d been two weeks since the Constance incident had happened and to be honest- I can’t tell whether it was real or not."
+
+            "Her touch, voice and smile all felt so real yet the moment she faded to the dawn… it felt like I was the lead of some sappy romance movie."
+
+            "I can’t get her name out of my mouth, everytime someone knocks on my door- some part of me wishes it was her, ready to bother me about some book she’s read."
+
+            "I shouldn’t be reminiscing on this, I have to get this code ready by thursday or else the manager will really have my head-"
+
+            "???" "Leclerc!"
+
+            "As I heard my name, I rushed towards the source of the noise and… that was my boss. He rubs his temples as he shoves a stack of paper upon me which seems to look like- training sheets?"
+
+            "Manager" "You’re one of the more loyal mutts in this company, go tour the new hire. She’s part of the marketing division so don’t get too attached."
+
+            "Manager" "Also, do be nice, she may be new but she’s a couple years older than you."
+
+            "A new hire? Great, usually they’re such bright eyed kids or some coding know-it-all from some big company who only joined to flex on people. Even worse that’s she’s older, she might mess things up and they’ll contact me again-"
+
+            "???" "Are you Ms. Leclerc?"
+
+            "--!"
+
+            s "I’m Constance Dominique, it’s really nice to meet you!"
+
+            e "It’s nice to meet you again-"
+
+            s "Again? Have we met before?"
+
+            e "Ah no! You just look like someone I remembered, I got you two all mixed up ahaha…"
+
+            e "Elysia Leclerc, it’s nice to meet you, Ms. Constance."
 
 
 
