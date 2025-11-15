@@ -689,35 +689,69 @@ label day1:
             label searchRoom3:
                 if searchNum >= 2:
                     $ searchNum = 0
+                    "Huh... No matter how hard I looked, she's not here."
+                    "Maybe I’ll see her tomorrow."
+                    scene bg black with dissolve
                     jump day4
-                menu:
-                    "Search the kitchen":
-                        if randRoom == 1:
-                            jump encounter3
-                        else:
-                            "Nothing here seems out of place, everything seems fine..."
-                            e "It is a bit chilly here."
-                            $ searchNum += 1
-                            jump searchRoom3
+                    menu:
+                        "Search the kitchen":
+                            scene bg kitchen with dissolve
+                            if randRoom == 1:
+                                jump encounter3
+                            else:
+                                "Hmmm... These dishes are still piled up from where I left them last time."
+                                "Seems like she’s not here."
+                                $ searchNum += 1
+                                jump searchRoom3
 
-                    "Search the living room":
-                        scene bg house_night with dissolve
-                        if randRoom == 2:
-                            jump encounter3
-                        else:
-                            "Nothing here seems out of place, everything seems fine..."
-                            e "It is a bit chilly here."
-                            $ searchNum += 1
-                            jump searchRoom3
-                            
-                    "Search the storage room":
-                        if randRoom == 3:
-                            jump encounter3
-                        else:
-                            "Nothing here seems out of place, everything seems fine..."
-                            e "It is a bit chilly here."
-                            $ searchNum += 1
-                            jump searchRoom3
+                        "Search the living room":
+                            scene bg house_night with dissolve
+                            if randRoom == 2:
+                                jump encounter3
+                            else:
+                                "Huh... I swore I heard noises coming from here."
+                                "Turns out I was wrong, it’s just me and that spot of mold on the wall."
+                                $ searchNum += 1
+                                jump searchRoom3
+                                
+                        "Search the storage room":
+                            scene bg storage with dissolve
+                            if randRoom == 3:
+                                jump encounter3
+                            else:
+                                "My eyes must be deceiving me... I thought I saw a shadow move towards here."
+                                "There’s nothing but dust particles in this room. Looks like she’s not around."
+                                $ searchNum += 1
+                                jump searchRoom3
+
+                label encounter3:
+                    e "Constance?"
+
+                    s "Hm- Oh, did you rest well Ms. Elysia?"
+
+                    e "It was fine, nothing like a good coffee couldn’t fix"
+
+                    "Constance’s gaze moves to the window, her eyes growing ever so weary. The temperature drops, the hairs beyond my neck standing as my arms shiver, looking for a sense of warmth."
+
+                    s "The moon is beautiful, isn’t it?"
+
+                    e "Of course the ghost would like the blood moon."
+
+                    s "..."
+
+                    e "..."
+
+                    e "I’m sorry- I should’ve known it would remind you about your past"
+
+                    s "No no, it’s fine. It’s about something else, something a lot more relevant."
+
+                    s "Strange, isn’t it? Four days, in some place I’d never heard of, with someone I barely know yet somehow- I ended up enjoying it more than any ballroom or tea party my life can offer."
+
+                    s "Such a shame it’ll be gone so soon, what I’d do to feel something like this again."
+
+                    "Her eyes hang a sense of sorrow- fear even, what comes to her existence after this blood moon sets is beyond both of our comprehension. The blurry figure turns around, her glowing eyes meeting with mine, locking our gazes exclusively for each other."
+
+
 
             
 
