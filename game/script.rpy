@@ -369,7 +369,6 @@ label day1:
 
                     "Spending time with her was... interesting, to say the least."
 
-                    $ day1Nice = true
 
                     jump day2
 
@@ -406,8 +405,6 @@ label day1:
 
                     e "Then do what you must to finish your unfinished business."
 
-                    $ day1Nice = false
-
                     jump day2
 
             
@@ -416,7 +413,7 @@ label day1:
 
 
     label day2:
-        if day1Nice == true:
+        if affection == 1:
             "To my surprise, I never expected that I’d get along well with a ghost that’s haunting my own home."
 
             "My bleak and lonely nights started becoming bearable because of this unexpected visitor."
@@ -477,7 +474,7 @@ label day1:
 
                 s "Is something the matter?"
 
-        elif day1Nice == false:
+        else:
             "After another draining day at work, I’m finally back at my apartment. As soon as I entered my home, I was greeted with that familiar sensation."
 
             "That same tingle in my spine which I felt when I first encountered Constance."
@@ -616,7 +613,6 @@ label day1:
 
         "She must be awake…"
 
-        menu: 
             
 
 
