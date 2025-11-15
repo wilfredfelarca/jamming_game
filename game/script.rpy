@@ -557,13 +557,47 @@ label day1:
 
                         "She looked at me with those expressive eyes of hers, and I felt even more flustered. I stammered my words out, not wanting to creep her out."
 
-                        
+                        e "I um- Thanks. It’s been a while since I had someone actually listen to me, who’d thought that someone would be some hundred years old ghost. It makes me feel bad that I was a jerk to you at first."
+
+                        "I notice Constance's eyes widen, shock evident in those expressive eyes of hers."
+
+                        s "It’s my pleasure, Ms. Elysia! You do not need to concern yourself with thanking me for something as simple as lending an ear."
+
+                        s "Besides, it’s the least I could do for being an unwelcome guest here in your home."
+
+                        "And just like that, Constance excused herself once again, yawning as she phased through walls."
+
+                        jump day3
 
                     "Close yourself off from her":
+                        e "No, yeah. Everything’s fine."
+
+                        "I sigh and let my feet lead me to the living room couch and let my body sink into the comfortable cushions."
+
+                        e "Just tired from work, that’s all."
+
+                        "I probably did a terrible job of lying, because Constance gave me a look that said she didn’t believe me."
+
+                        s "Are you certain? You don’t seem fine-"
+
+                        e "I am. I don’t need a pity party. Especially not from some ghost who’s had her entire life served to her on a silver platter."
+
+                        "Constance’s eyes averted my gaze as they drooped sadly."
+
+                        s "I won’t press you for any further details then…"
+
+                        "There was a tinge of sadness in Constance’s voice as she floated away in my apartment."
+
+                        "Constance couldn’t help but feel sad. She wanted to trust this human, and felt like they both missed out on something. She thought they could have gotten along, but she was wrong."
+
+                        "But alas, she was naught but an unwanted visitor who was bound in somebody else’s home."
+
+                        jump day3
 
 
 
 
+    label day3:
 
 
 
