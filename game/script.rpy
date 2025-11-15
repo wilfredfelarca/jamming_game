@@ -268,7 +268,10 @@ label day1:
         label encounter1:
             "I see Constance lingering, her curious eyes darting around the room."
 
-            show ghost happy with dissolve
+            show ghost happy with dissolve: 
+                xalign 0.5
+                yalign 0.55
+                zoom 0.8
             s "You know, Ms. Elysia, I find it amusing how alike you are to this protagonist from a book I loved so dearly."
 
             "I felt myself choke on my spit, my ears heating up at Constance’s random comment."
@@ -315,46 +318,60 @@ label day1:
                     show ghost confused
                     "As I explained my hobbies to her, Constance had a look of pure curiosity on whatever’s behind that ghostly apparition she puts up."
 
-                    s "Man-ga? Oh! You mean Mangoes? I heard from my father that it’s a rare foreign fruit that nobles eat in its country of origin  – so you too must be a noble!"
+                    s "Man-ga? Oh! You mean mangoes? I heard from my father that it’s a rare foreign fruit that nobles eat in its country of origin  – so you must be a noble too!"
 
-                    e "Ah- You have me mistaken, I’m not a noble. And no, I don’t like Mangoes – Well, I do, but Manga isn’t Mangoes."
+                    e "Ah- You have me mistaken, I’m not a noble. And no, I don’t like mangoes – Well, I do, but Manga isn’t mangoes."
 
-                    e "It’s well- Like um... Picture books?"
+                    e "It’s well- Like um... picture books?"
 
+                    show ghost normal
                     s "Like what children read?"
 
-                    e "What? No- Well, children can read some of them. But Manga is for all ages, sometimes they even tackle topics that only adults are capable of understanding."
+                    e "What? No- Well, children can read some of them. But manga is for all ages, sometimes they even tackle topics that only adults are capable of understanding."
 
-                    "I led her towards the chaotic shelf in my living room."
+                    if randRoom == 2:
+                        "I led her to the chaotic shelf by the wall."
+                    else:
+                        scene bg house_night with dissolve
+                        show ghost normal with dissolve: ## Because scene clears all the characters shown, we need to reinitialize them.
+                            xalign 0.5
+                            yalign 0.55
+                            zoom 0.8
+                        "I led her towards the chaotic shelf in my living room."
 
                     e "The best way I could describe them is that they’re like picture books, but more elaborate and detailed. Here, let me show you how they usually look."
 
-                    "I grab one of my mangas from the shelf and open up a random page for Constance to see."
+                    "I grab one of my manga from the shelf and open up a random page for Constance to see."
 
                     "Oh, that’s two women kissing-"
 
                     menu:
                         "I quickly shut the manga":
-                            e "HMM! Must’ve been the wind..."
+                            e "Hmm! Must’ve been the wind..."
 
+                    show ghost confused
                     "Constance tilts her head curiously, puzzled by my behavior. Before she could ask more about it, I picked out another manga and flipped open a more appropriate page."
 
+                    show ghost normal
                     "..."
 
                     "The more I explained about my ‘modern’ hobbies, the more Constance emanates this curious energy about her. She seemed so captivated the more I talk, which I honestly find quite adorable-"
 
-                    "WHAT AM I THINKING? That’s a dead woman’s spirit, get yourself together Elysia Leclerc."
+                    "What am I thinking?! That’s a dead woman’s spirit, get yourself together, Elysia Leclerc!"
 
+                    show ghost happy
                     s "You know, Ms. Elysia, I envy you..."
 
                     e "Me? How come?"
 
+                    show ghost normal
                     s "Your life just feels so... unrestricted, free... It’s such a contrast to how I lived my life back then."
 
                     e "What do you mean?"
 
                     "Constance chortled sheepishly, immediately changing the topic to divert the topic away from her personal life."
 
+                    show ghost happy
                     s "Anyways! Enough about me, I think we should coordinate a get-together where we read a book together."
 
                     s "Especially since it’s the first time I’ve ever met you, the tenant of this place. Usually when I wake up during the blood moon, there’s nothing but empty space and silence who greets me..."
