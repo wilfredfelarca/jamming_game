@@ -612,7 +612,12 @@ label day1:
 
 
     label day3:
+        "Almost like clockwork- my mind and body wake up, hearing the familiar sounds of objects clanging against each other and the occasional door creek."
 
+        "She must be awake…"
+
+        menu: 
+            
 
 
 
