@@ -352,6 +352,8 @@ label day1:
 
                     "Spending time with her was… interesting, to say the least."
 
+                    $ day1Nice = true
+
                     jump day2
 
                 "Disregard her interest":
@@ -387,6 +389,8 @@ label day1:
 
                     e "Then do what you must to finish your unfinished business."
 
+                    $ day1Nice = false
+
                     jump day2
 
             
@@ -395,7 +399,169 @@ label day1:
 
 
     label day2:
-        "its a new day"
+        if day1Nice == true:
+            "To my surprise, I never expected that I’d get along well with a ghost that’s haunting my own home."
+
+            "My bleak and lonely nights started becoming bearable because of this unexpected visitor."
+
+            "Strangely enough, I even find myself looking forward to seeing what she’s up to this evening."
+
+            "After another draining day at work, I’m finally back at my apartment. As soon as I entered my home, I was greeted with that familiar sensation."
+
+            "That same tingle in my spine which I felt when I first encountered Constance."
+
+            "She must be nearby."
+
+            $ randRoom = renpy.random.randint(1, 3)
+            $ searchNum = 0
+
+            label searchRoom2:
+                if searchNum >= 2:
+                    $ searchNum = 0
+                    jump day3
+                menu:
+                    "Search the kitchen":
+                        if randRoom == 1:
+                            jump encounter2
+                        else:
+                            "Nothing here seems out of place, everything seems fine..."
+                            e "It is a bit chilly here."
+                            $ searchNum += 1
+                            jump searchRoom2
+
+                    "Search the living room":
+                        scene bg house_night with dissolve
+                        if randRoom == 2:
+                            jump encounter2
+                        else:
+                            "Nothing here seems out of place, everything seems fine..."
+                            e "It is a bit chilly here."
+                            $ searchNum += 1
+                            jump searchRoom2
+                            
+                    "Search the storage room":
+                        if randRoom == 3:
+                            jump encounter2
+                        else:
+                            "Nothing here seems out of place, everything seems fine..."
+                            e "It is a bit chilly here."
+                            $ searchNum += 1
+                            jump searchRoom2
+        
+
+            label encounter2:
+                s "I see you’ve eagerly taken up my offer on a reading session then, Ms. Elysia?"
+
+                "Constance smiled, clearly teasing me."
+
+                "I guess I looked extra tired after work today, because even Constance noticed how different I behaved compared to last night."
+
+                "Constance hovered closer, eyeing me up and down with those curious eyes of hers."
+
+                s "Is something the matter?"
+
+        elif day1Nice == false:
+            "After another draining day at work, I’m finally back at my apartment. As soon as I entered my home, I was greeted with that familiar sensation."
+
+            "That same tingle in my spine which I felt when I first encountered Constance."
+
+            "She must be nearby."
+
+            $ randRoom = renpy.random.randint(1, 3)
+            $ searchNum = 0
+
+            label searchRoom2Bad:
+                if searchNum >= 2:
+                    $ searchNum = 0
+                    jump day3
+                menu:
+                    "Search the kitchen":
+                        if randRoom == 1:
+                            jump encounter2Bad
+                        else:
+                            "Nothing here seems out of place, everything seems fine..."
+                            e "It is a bit chilly here."
+                            $ searchNum += 1
+                            jump searchRoom2Bad
+
+                    "Search the living room":
+                        scene bg house_night with dissolve
+                        if randRoom == 2:
+                            jump encounter2Bad
+                        else:
+                            "Nothing here seems out of place, everything seems fine..."
+                            e "It is a bit chilly here."
+                            $ searchNum += 1
+                            jump searchRoom2Bad
+                            
+                    "Search the storage room":
+                        if randRoom == 3:
+                            jump encounter2Bad
+                        else:
+                            "Nothing here seems out of place, everything seems fine..."
+                            e "It is a bit chilly here."
+                            $ searchNum += 1
+                            jump searchRoom2Bad
+
+            label encounter2Bad:
+                "Constance looks timid as soon as I enter the room. I can tell she hesitated for a moment before she hovered over to me."
+
+                "I guess I looked extra tired after work today, because even Constance noticed how different I behaved compared to last night."
+
+                "She hovered closer, eyeing me up and down with those curious eyes of hers."
+
+                s "Is something the matter?"
+
+                menu:
+                    "Open up to Constance":
+                        e "If I’m going to be completely honest? No."
+
+                        "I sighed as I let my feet carry me to my couch, before sinking down and letting the plush cushions soothe my exhausted body and mind."
+
+                        "From the corner of my eye, I see Constance hovering after me. She tried to sit on the same couch, but her body just phased through instead of resting atop the cushiony seats."\
+
+                        s "Well… If you are comfortable, I can always lend a shoulder. Well, not physically."
+
+                        e "I uh… thank you there, Constance."
+
+                        "I take a deep breath and glance at the ghost beside me."
+
+                        "It feels silly —- here I am, talking to a deceased person’s spirit. You’d expect I’d talk to a friend about this, but no. I’m talking to a ghost."
+
+                        e "You know what I find funny? The idea of someone envying how I live my life."
+
+                        "..."
+
+                        e "I’m not as carefree as you think I am."
+
+                        e "My entire life, I’ve felt aimless. I’m stuck working at a job I don’t even love."
+
+                        e "I have no one but myself to blame for it. This is the price I paid for choosing the solace a mundane lifestyle brings."
+
+                        e "I don’t bear many regrets in life yet, I often wonder what could've been… if I wasn’t so scared. I always did try to hold myself back- afraid of the concept of not being comfortable… safe, at the cost of my own freedom- my passion for well… anything."
+
+                        "I glance at the blood moon outside the window for a moment."
+
+                        "I then look at Constance. She has this unreadable look visible in her eyes. Understanding? Pity? I’m not quite sure what it is, but I can feel all of her attention directed at me."
+
+                        "Before I knew it, me and Constance had been talking for hours. She was an amazing listener, and I’m starting to feel grateful from the companionship she provides."
+
+                        e "Constance, I-"
+
+                        "For some reason, I struggled to get my words out. I feel heat rising up my neck and my ears."
+
+                        s "Yes?"
+
+                        "She looked at me with those expressive eyes of hers, and I felt even more flustered. I stammered my words out, not wanting to creep her out."
+
+                        
+
+                    "Close yourself off from her":
+
+
+
+
+
 
 
 
