@@ -6,6 +6,9 @@
 define e = Character(_("Elysia"), color="#ddaacc")
 define s = Character(_("Constance"), color="#91caca")
 
+## Affection value determines the ending, increases with good interaction
+default affection = 0
+
 # The game starts here.
 
 label start:
@@ -198,9 +201,6 @@ label start:
                     s "You truly are sweet... rest well too there, Ms. Elysia."
 
                     jump day1
-
-## Affection value determines the ending, increases with good interaction
-$ affection = 0
 
 label day1:
 
