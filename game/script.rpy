@@ -378,24 +378,28 @@ label day1:
 
                     "Before I could protest against Constance’s plan, she let out a tired yawn."
 
-                    s "I guess that’s my cue to leave then. I feel... sleepy yawns. I’ll see you tomorrow evening then, ta-ta!"
+                    show ghost normal
+                    s "I guess that’s my cue to leave then. I feel... sleepy. I’ll see you tomorrow evening then, ta-ta!"
 
+                    hide ghost with dissolve
                     e "Wait! But where do I find you?"
 
                     "I sigh as Constance’s ghostly figure phases through a wall. There she goes, I guess."
 
+                    scene bg black with dissolve
                     "Spending time with her was... interesting, to say the least."
-
 
                     jump day2
 
                 "Disregard her interest":
+                    show ghost surprised
                     e "Zip it, okay? I’m not in the mood for whatever shenanigans you’re up to. I’m exhausted from work."
 
                     "It seems mean, but I decided to brush her off. It’s better if I just avoid her. I don’t know what her intentions are, and whether she’s harmless or not."
 
                     "Constance noticed that I brushed her off. She looks a bit discouraged as I hear her mumbling something."
 
+                    show ghost sad
                     s "I don’t see the need for you to be so rude... You are just like him."
 
                     s "I guess not all heroes are one-to-one with that of a novel’s."
@@ -404,8 +408,10 @@ label day1:
 
                     e "I know it’s the blood moon, but why are you even here? Can you not, I don’t know- leave? I’m so confused..."
 
+                    show ghost confused
                     s "I’m just as confused as you are... I don’t even recall how I arrived in this place."
 
+                    show ghost normal
                     "Constance looks at me with hope in her eyes."
 
                     s "Perhaps... My manor and your ‘apartment’ are within the same plot of land?"
@@ -420,6 +426,7 @@ label day1:
 
                     s "Well um... From novels I’ve read, ghouls who usually have unfinished business turn into ghosts-"
 
+                    scene bg black with dissolve
                     e "Then do what you must to finish your unfinished business."
 
                     jump day2
@@ -427,10 +434,10 @@ label day1:
             
 
 
-
-
     label day2:
         if affection == 1:
+
+            scene bg house_night with dissolve
             "To my surprise, I never expected that I’d get along well with a ghost that’s haunting my own home."
 
             "My bleak and lonely nights started becoming bearable because of this unexpected visitor."
@@ -486,17 +493,24 @@ label day1:
         
 
                 label encounter2:
+                    show ghost happy with dissolve:
+                            xalign 0.5
+                            yalign 0.55
+                            zoom 0.8
                     s "I see you’ve eagerly taken up my offer on a reading session then, Ms. Elysia?"
 
                     "Constance smiled, clearly teasing me."
 
                     "I guess I looked extra tired after work today, because even Constance noticed how different I behaved compared to last night."
 
+                    show ghost normal
                     "Constance hovered closer, eyeing me up and down with those curious eyes of hers."
 
                     s "Is something the matter?"
 
         else:
+
+            scene bg house_night with dissolve
             "After another draining day at work, I’m finally back at my apartment. As soon as I entered my home, I was greeted with that familiar sensation."
 
             "That same tingle in my spine which I felt when I first encountered Constance."
@@ -545,6 +559,7 @@ label day1:
                             jump searchRoom2Bad
 
                 label encounter2Bad:
+                    show ghost awkward
                     "Constance looks timid as soon as I enter the room. I can tell she hesitated for a moment before she hovered over to me."
 
                     "I guess I looked extra tired after work today, because even Constance noticed how different I behaved compared to last night."
@@ -557,14 +572,24 @@ label day1:
             "Open up to Constance":
                 e "If I’m going to be completely honest? No."
 
+                scene bg couch with dissolve
                 "I sighed as I let my feet carry me to my couch, before sinking down and letting the plush cushions soothe my exhausted body and mind."
 
+                show ghost normal with dissolve:
+                            xalign 0.5
+                            yalign 0.55
+                            zoom 0.8
                 "From the corner of my eye, I see Constance hovering after me. She tried to sit on the same couch, but her body just phased through instead of resting atop the cushiony seats."\
 
-                s "Well… If you are comfortable, I can always lend a shoulder. Well, not physically."
+                show ghost happy
+                s "Well… If you are comfortable, I can always lend a shoulder."
+                
+                show ghost awkward
+                s "Well, not physically."
 
                 e "I uh… thank you there, Constance."
 
+                show ghost normal
                 "I take a deep breath and glance at the ghost beside me."
 
                 "It feels silly —- here I am, talking to a deceased person’s spirit. You’d expect I’d talk to a friend about this, but no. I’m talking to a ghost."
@@ -575,11 +600,15 @@ label day1:
 
                 e "I’m not as carefree as you think I am."
 
-                e "My entire life, I’ve felt aimless. I’m stuck working at a job I don’t even love."
+                e "My entire life, I’ve felt aimless. I’m stuck working at a job I don’t even like."
 
+                show ghost sad
                 e "I have no one but myself to blame for it. This is the price I paid for choosing the solace a mundane lifestyle brings."
 
-                e "I don’t bear many regrets in life yet, I often wonder what could've been… if I wasn’t so scared. I always did try to hold myself back- afraid of the concept of not being comfortable… safe, at the cost of my own freedom- my passion for well… anything."
+                e "I don’t bear many regrets in life yet, I often wonder what could've been... if I wasn’t so scared."
+
+                e "I always did try to hold myself back- afraid of the concept of not being comfortable…
+                Safe, at the cost of my own freedom, my passion for well… anything."
 
                 "I glance at the blood moon outside the window for a moment."
 
