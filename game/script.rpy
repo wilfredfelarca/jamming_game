@@ -455,41 +455,40 @@ label day1:
 
             label searchRoom2:
                 if searchNum >= 2:
-                    $ searchNum = 0
                     "Huh... No matter how hard I looked, she's not here."
                     "Maybe I’ll see her tomorrow."
                     scene bg black with dissolve
                     jump day3
-                    menu:
-                        "Search the kitchen":
-                            scene bg kitchen with dissolve
-                            if randRoom == 1:
-                                jump encounter2
-                            else:
-                                "Hmmm... These dishes are still piled up from where I left them last time."
-                                "Seems like she’s not here."
-                                $ searchNum += 1
-                                jump searchRoom2
+                menu:
+                    "Search the kitchen":
+                        scene bg kitchen with dissolve
+                        if randRoom == 1:
+                            jump encounter2
+                        else:
+                            "Hmmm... These dishes are still piled up from where I left them last time."
+                            "Seems like she’s not here."
+                            $ searchNum += 1
+                            jump searchRoom2
 
-                        "Search the living room":
-                            scene bg house_night with dissolve
-                            if randRoom == 2:
-                                jump encounter2
-                            else:
-                                "Huh... I swore I heard noises coming from here."
-                                "Turns out I was wrong, it’s just me and that spot of mold on the wall."
-                                $ searchNum += 1
-                                jump searchRoom2
-                                
-                        "Search the storage room":
-                            scene bg storage with dissolve
-                            if randRoom == 3:
-                                jump encounter2
-                            else:
-                                "My eyes must be deceiving me... I thought I saw a shadow move towards here."
-                                "There’s nothing but dust particles in this room. Looks like she’s not around."
-                                $ searchNum += 1
-                                jump searchRoom2
+                    "Search the living room":
+                        scene bg house_night with dissolve
+                        if randRoom == 2:
+                            jump encounter2
+                        else:
+                            "Huh... I swore I heard noises coming from here."
+                            "Turns out I was wrong, it’s just me and that spot of mold on the wall."
+                            $ searchNum += 1
+                            jump searchRoom2
+                            
+                    "Search the storage room":
+                        scene bg storage with dissolve
+                        if randRoom == 3:
+                            jump encounter2
+                        else:
+                            "My eyes must be deceiving me... I thought I saw a shadow move towards here."
+                            "There’s nothing but dust particles in this room. Looks like she’s not around."
+                            $ searchNum += 1
+                            jump searchRoom2
         
 
                 label encounter2:
