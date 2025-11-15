@@ -432,47 +432,52 @@ label day1:
             label searchRoom2:
                 if searchNum >= 2:
                     $ searchNum = 0
+                    "Huh... No matter how hard I looked, she's not here."
+                    "Maybe I’ll see her tomorrow."
+                    scene bg black with dissolve
                     jump day3
-                menu:
-                    "Search the kitchen":
-                        if randRoom == 1:
-                            jump encounter2
-                        else:
-                            "Nothing here seems out of place, everything seems fine..."
-                            e "It is a bit chilly here."
-                            $ searchNum += 1
-                            jump searchRoom2
+                    menu:
+                        "Search the kitchen":
+                            scene bg kitchen with dissolve
+                            if randRoom == 1:
+                                jump encounter2
+                            else:
+                                "Hmmm... These dishes are still piled up from where I left them last time."
+                                "Seems like she’s not here."
+                                $ searchNum += 1
+                                jump searchRoom2
 
-                    "Search the living room":
-                        scene bg house_night with dissolve
-                        if randRoom == 2:
-                            jump encounter2
-                        else:
-                            "Nothing here seems out of place, everything seems fine..."
-                            e "It is a bit chilly here."
-                            $ searchNum += 1
-                            jump searchRoom2
-                            
-                    "Search the storage room":
-                        if randRoom == 3:
-                            jump encounter2
-                        else:
-                            "Nothing here seems out of place, everything seems fine..."
-                            e "It is a bit chilly here."
-                            $ searchNum += 1
-                            jump searchRoom2
+                        "Search the living room":
+                            scene bg house_night with dissolve
+                            if randRoom == 2:
+                                jump encounter2
+                            else:
+                                "Huh... I swore I heard noises coming from here."
+                                "Turns out I was wrong, it’s just me and that spot of mold on the wall."
+                                $ searchNum += 1
+                                jump searchRoom2
+                                
+                        "Search the storage room":
+                            scene bg storage with dissolve
+                            if randRoom == 3:
+                                jump encounter2
+                            else:
+                                "My eyes must be deceiving me... I thought I saw a shadow move towards here."
+                                "There’s nothing but dust particles in this room. Looks like she’s not around."
+                                $ searchNum += 1
+                                jump searchRoom2
         
 
-            label encounter2:
-                s "I see you’ve eagerly taken up my offer on a reading session then, Ms. Elysia?"
+                label encounter2:
+                    s "I see you’ve eagerly taken up my offer on a reading session then, Ms. Elysia?"
 
-                "Constance smiled, clearly teasing me."
+                    "Constance smiled, clearly teasing me."
 
-                "I guess I looked extra tired after work today, because even Constance noticed how different I behaved compared to last night."
+                    "I guess I looked extra tired after work today, because even Constance noticed how different I behaved compared to last night."
 
-                "Constance hovered closer, eyeing me up and down with those curious eyes of hers."
+                    "Constance hovered closer, eyeing me up and down with those curious eyes of hers."
 
-                s "Is something the matter?"
+                    s "Is something the matter?"
 
         else:
             "After another draining day at work, I’m finally back at my apartment. As soon as I entered my home, I was greeted with that familiar sensation."
@@ -487,14 +492,18 @@ label day1:
             label searchRoom2Bad:
                 if searchNum >= 2:
                     $ searchNum = 0
+                    "Huh... No matter how hard I looked, she's not here."
+                    "Maybe I’ll see her tomorrow."
+                    scene bg black with dissolve
                     jump day3
                 menu:
                     "Search the kitchen":
+                        scene bg kitchen with dissolve
                         if randRoom == 1:
                             jump encounter2Bad
                         else:
-                            "Nothing here seems out of place, everything seems fine..."
-                            e "It is a bit chilly here."
+                            "Hmmm... These dishes are still piled up from where I left them last time."
+                            "Seems like she’s not here."
                             $ searchNum += 1
                             jump searchRoom2Bad
 
@@ -503,107 +512,110 @@ label day1:
                         if randRoom == 2:
                             jump encounter2Bad
                         else:
-                            "Nothing here seems out of place, everything seems fine..."
-                            e "It is a bit chilly here."
+                            "Huh... I swore I heard noises coming from here."
+                            "Turns out I was wrong, it’s just me and that spot of mold on the wall."
                             $ searchNum += 1
                             jump searchRoom2Bad
                             
                     "Search the storage room":
+                        scene bg storage with dissolve
                         if randRoom == 3:
                             jump encounter2Bad
                         else:
-                            "Nothing here seems out of place, everything seems fine..."
-                            e "It is a bit chilly here."
+                            "My eyes must be deceiving me... I thought I saw a shadow move towards here."
+                            "There’s nothing but dust particles in this room. Looks like she’s not around."
                             $ searchNum += 1
                             jump searchRoom2Bad
 
-            label encounter2Bad:
-                "Constance looks timid as soon as I enter the room. I can tell she hesitated for a moment before she hovered over to me."
+                label encounter2Bad:
+                    "Constance looks timid as soon as I enter the room. I can tell she hesitated for a moment before she hovered over to me."
 
-                "I guess I looked extra tired after work today, because even Constance noticed how different I behaved compared to last night."
+                    "I guess I looked extra tired after work today, because even Constance noticed how different I behaved compared to last night."
 
-                "She hovered closer, eyeing me up and down with those curious eyes of hers."
+                    "She hovered closer, eyeing me up and down with those curious eyes of hers."
 
-                s "Is something the matter?"
+                    s "Is something the matter?"
 
-                menu:
-                    "Open up to Constance":
-                        e "If I’m going to be completely honest? No."
+        menu:
+            "Open up to Constance":
+                e "If I’m going to be completely honest? No."
 
-                        "I sighed as I let my feet carry me to my couch, before sinking down and letting the plush cushions soothe my exhausted body and mind."
+                "I sighed as I let my feet carry me to my couch, before sinking down and letting the plush cushions soothe my exhausted body and mind."
 
-                        "From the corner of my eye, I see Constance hovering after me. She tried to sit on the same couch, but her body just phased through instead of resting atop the cushiony seats."\
+                "From the corner of my eye, I see Constance hovering after me. She tried to sit on the same couch, but her body just phased through instead of resting atop the cushiony seats."\
 
-                        s "Well… If you are comfortable, I can always lend a shoulder. Well, not physically."
+                s "Well… If you are comfortable, I can always lend a shoulder. Well, not physically."
 
-                        e "I uh… thank you there, Constance."
+                e "I uh… thank you there, Constance."
 
-                        "I take a deep breath and glance at the ghost beside me."
+                "I take a deep breath and glance at the ghost beside me."
 
-                        "It feels silly —- here I am, talking to a deceased person’s spirit. You’d expect I’d talk to a friend about this, but no. I’m talking to a ghost."
+                "It feels silly —- here I am, talking to a deceased person’s spirit. You’d expect I’d talk to a friend about this, but no. I’m talking to a ghost."
 
-                        e "You know what I find funny? The idea of someone envying how I live my life."
+                e "You know what I find funny? The idea of someone envying how I live my life."
 
-                        "..."
+                "..."
 
-                        e "I’m not as carefree as you think I am."
+                e "I’m not as carefree as you think I am."
 
-                        e "My entire life, I’ve felt aimless. I’m stuck working at a job I don’t even love."
+                e "My entire life, I’ve felt aimless. I’m stuck working at a job I don’t even love."
 
-                        e "I have no one but myself to blame for it. This is the price I paid for choosing the solace a mundane lifestyle brings."
+                e "I have no one but myself to blame for it. This is the price I paid for choosing the solace a mundane lifestyle brings."
 
-                        e "I don’t bear many regrets in life yet, I often wonder what could've been… if I wasn’t so scared. I always did try to hold myself back- afraid of the concept of not being comfortable… safe, at the cost of my own freedom- my passion for well… anything."
+                e "I don’t bear many regrets in life yet, I often wonder what could've been… if I wasn’t so scared. I always did try to hold myself back- afraid of the concept of not being comfortable… safe, at the cost of my own freedom- my passion for well… anything."
 
-                        "I glance at the blood moon outside the window for a moment."
+                "I glance at the blood moon outside the window for a moment."
 
-                        "I then look at Constance. She has this unreadable look visible in her eyes. Understanding? Pity? I’m not quite sure what it is, but I can feel all of her attention directed at me."
+                "I then look at Constance. She has this unreadable look visible in her eyes. Understanding? Pity? I’m not quite sure what it is, but I can feel all of her attention directed at me."
 
-                        "Before I knew it, me and Constance had been talking for hours. She was an amazing listener, and I’m starting to feel grateful from the companionship she provides."
+                "Before I knew it, me and Constance had been talking for hours. She was an amazing listener, and I’m starting to feel grateful from the companionship she provides."
 
-                        e "Constance, I-"
+                e "Constance, I-"
 
-                        "For some reason, I struggled to get my words out. I feel heat rising up my neck and my ears."
+                "For some reason, I struggled to get my words out. I feel heat rising up my neck and my ears."
 
-                        s "Yes?"
+                s "Yes?"
 
-                        "She looked at me with those expressive eyes of hers, and I felt even more flustered. I stammered my words out, not wanting to creep her out."
+                "She looked at me with those expressive eyes of hers, and I felt even more flustered. I stammered my words out, not wanting to creep her out."
 
-                        e "I um- Thanks. It’s been a while since I had someone actually listen to me, who’d thought that someone would be some hundred years old ghost. It makes me feel bad that I was a jerk to you at first."
+                e "I um- Thanks. It’s been a while since I had someone actually listen to me, who’d thought that someone would be some hundred years old ghost. It makes me feel bad that I was a jerk to you at first."
 
-                        "I notice Constance's eyes widen, shock evident in those expressive eyes of hers."
+                "I notice Constance's eyes widen, shock evident in those expressive eyes of hers."
 
-                        s "It’s my pleasure, Ms. Elysia! You do not need to concern yourself with thanking me for something as simple as lending an ear."
+                s "It’s my pleasure, Ms. Elysia! You do not need to concern yourself with thanking me for something as simple as lending an ear."
 
-                        s "Besides, it’s the least I could do for being an unwelcome guest here in your home."
+                s "Besides, it’s the least I could do for being an unwelcome guest here in your home."
 
-                        "And just like that, Constance excused herself once again, yawning as she phased through walls."
+                "And just like that, Constance excused herself once again, yawning as she phased through walls."
 
-                        jump day3
+                $ affection += 1
 
-                    "Close yourself off from her":
-                        e "No, yeah. Everything’s fine."
+                jump day3
 
-                        "I sigh and let my feet lead me to the living room couch and let my body sink into the comfortable cushions."
+            "Close yourself off from her":
+                e "No, yeah. Everything’s fine."
 
-                        e "Just tired from work, that’s all."
+                "I sigh and let my feet lead me to the living room couch and let my body sink into the comfortable cushions."
 
-                        "I probably did a terrible job of lying, because Constance gave me a look that said she didn’t believe me."
+                e "Just tired from work, that’s all."
 
-                        s "Are you certain? You don’t seem fine-"
+                "I probably did a terrible job of lying, because Constance gave me a look that said she didn’t believe me."
 
-                        e "I am. I don’t need a pity party. Especially not from some ghost who’s had her entire life served to her on a silver platter."
+                s "Are you certain? You don’t seem fine-"
 
-                        "Constance’s eyes averted my gaze as they drooped sadly."
+                e "I am. I don’t need a pity party. Especially not from some ghost who’s had her entire life served to her on a silver platter."
 
-                        s "I won’t press you for any further details then…"
+                "Constance’s eyes averted my gaze as they drooped sadly."
 
-                        "There was a tinge of sadness in Constance’s voice as she floated away in my apartment."
+                s "I won’t press you for any further details then…"
 
-                        "Constance couldn’t help but feel sad. She wanted to trust this human, and felt like they both missed out on something. She thought they could have gotten along, but she was wrong."
+                "There was a tinge of sadness in Constance’s voice as she floated away in my apartment."
 
-                        "But alas, she was naught but an unwanted visitor who was bound in somebody else’s home."
+                "Constance couldn’t help but feel sad. She wanted to trust this human, and felt like they both missed out on something. She thought they could have gotten along, but she was wrong."
 
-                        jump day3
+                "But alas, she was naught but an unwanted visitor who was bound in somebody else’s home."
+
+                jump day3
 
 
 
@@ -612,6 +624,54 @@ label day1:
         "Almost like clockwork- my mind and body wake up, hearing the familiar sounds of objects clanging against each other and the occasional door creek."
 
         "She must be awake…"
+
+        if affection == 2:
+            "An uncharacteristic grin emerges from my face, I haven’t been this cheery since well… since forever."
+
+            e "This is the last night of the blood moon… which means-"
+
+            "Hold on Elysia, why are YOU thinking of this? She’s just a ghost, you can’t fall for someone this soon, especially someone DEAD. Besides, after tonight, she’ll be a distant memory- well, a distant memory till the next bloodmoon, IF she’ll be there in the next bloodmoon."
+
+            "A distant memory… Why does the idea make my heart churn? I’ve had my fair shares of heartbreak and unrequited ventures, this feeling should be normal to me."
+
+            "Loving and Liking- they’re just one and the same. She isn’t even special, she’s just a spirit. A fragment of her time. One fragment can’t give you the full picture on what Love should or could be-"
+
+            "Clank clank"
+
+            e "She seems quite active tonight, might as well say ‘hello’"
+
+            label searchRoom3:
+                if searchNum >= 2:
+                    $ searchNum = 0
+                    jump day4
+                menu:
+                    "Search the kitchen":
+                        if randRoom == 1:
+                            jump encounter3
+                        else:
+                            "Nothing here seems out of place, everything seems fine..."
+                            e "It is a bit chilly here."
+                            $ searchNum += 1
+                            jump searchRoom3
+
+                    "Search the living room":
+                        scene bg house_night with dissolve
+                        if randRoom == 2:
+                            jump encounter3
+                        else:
+                            "Nothing here seems out of place, everything seems fine..."
+                            e "It is a bit chilly here."
+                            $ searchNum += 1
+                            jump searchRoom3
+                            
+                    "Search the storage room":
+                        if randRoom == 3:
+                            jump encounter3
+                        else:
+                            "Nothing here seems out of place, everything seems fine..."
+                            e "It is a bit chilly here."
+                            $ searchNum += 1
+                            jump searchRoom3
 
             
 
