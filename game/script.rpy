@@ -228,14 +228,17 @@ label day1:
     label searchRoom1:
         if searchNum >= 2:
             $ searchNum = 0
+            "Huh... No matter how hard I looked, she's not here."
+            "Maybe I’ll see her tomorrow."
+            scene bg black with dissolve
             jump day2
         menu:
             "Search the kitchen":
                 if randRoom == 1:
                     jump encounter1
                 else:
-                    "Nothing here seems out of place, everything seems fine..."
-                    e "It is a bit chilly here."
+                    "Hmmm... These dishes are still piled up from where I left them last time."
+                    "Seems like she’s not here."
                     $ searchNum += 1
                     jump searchRoom1
 
@@ -244,8 +247,8 @@ label day1:
                 if randRoom == 2:
                     jump encounter1
                 else:
-                    "Nothing here seems out of place, everything seems fine..."
-                    e "It is a bit chilly here."
+                    "Huh... I swore I heard noises coming from here."
+                    "Turns out I was wrong, it’s just me and that spot of mold on the wall."
                     $ searchNum += 1
                     jump searchRoom1
                     
@@ -253,8 +256,8 @@ label day1:
                 if randRoom == 3:
                     jump encounter1
                 else:
-                    "Nothing here seems out of place, everything seems fine..."
-                    e "It is a bit chilly here."
+                    "My eyes must be deceiving me... I thought I saw a shadow move towards here."
+                    "There’s nothing but dust particles in this room. Looks like she’s not around."
                     $ searchNum += 1
                     jump searchRoom1
         
